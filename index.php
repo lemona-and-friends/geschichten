@@ -1,67 +1,67 @@
 <?php
-    session_start();
-    
-    if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction']))
-    {
-        
-        test();
-        
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction'])) {
+
+    test();
+
+}
+
+/**
+ *
+ */
+function test()
+{
+    $bd = mysqli_connect("localhost", "geschichten_User", "geschichten", "geschichten_User");
+    if (mysqli_connect_errno()) {
+        echo "Error: " . mysqli_connect_error() . ". <br>";
+        exit();
     }
-    
-    function test(){
-        $bd = mysqli_connect("localhost", "geschichten_User", "geschichten", "geschichten_User");
-        if (mysqli_connect_errno()) {
-            echo "Error: " . mysqli_connect_error() . ". <br>"; exit();
-        }
-        
-        $sql = "SELECT name FROM user WHERE name ='" . $_POST['name'] ."' and password='".  $_POST['password'] ."'" ;
-        $resultado2 = mysqli_query($bd, $sql);
-        
-        
-        $num2 = mysqli_num_rows($resultado2);
-        if($num2 != 0){
-            $_SESSION['userid'] = $_POST['name'];
-            header("Location: /afterLogin.php");
-        }
-        
-        else {
-            echo "Email oder Passwort falsch du dummi";
-        }
-        
-        mysqli_close($bd);
-        
+
+    $sql = "SELECT name FROM user WHERE name ='" . $_POST['name'] . "' and password='" . $_POST['password'] . "'";
+    $resultado2 = mysqli_query($bd, $sql);
+
+
+    $num2 = mysqli_num_rows($resultado2);
+    if ($num2 != 0) {
+        $_SESSION['userid'] = $_POST['name'];
+        header("Location: /afterLogin.php");
+    } else {
+        echo "Email oder Passwort falsch du dummi";
     }
-    
-    ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="utf-8" />
-<link rel="stylesheet" type="text/css" href="base.css">
 
+    mysqli_close($bd);
 
+}
+    include('head.php')
+?>
 
-<title>Geschichten </title>
-</head>
-
-<body>
 
 <div class="flexContainer">
-<div>
-<h3> Login </h3>
+    <div>
+        <h1> Login </h1>
+    </div>
+    <div>
+        <p>Willkommen Geschichtenschreiber, lasst uns gemeinsam eine Reise in die sarmadische Fantasie antreten. </p>
+        <form action="index.php" method="post">
+            <fieldset>
+                <label for="name" title="Name">Dein Name:  </label>
+                <input type="text" name="name" value="" id="name" required>
+            </fieldset>
+            <fieldset>
+                <span for="password" title="Passwort">Dein Passwort:  </span>
+                <input type="password" name="password" value="" id="password" required>
+            </fieldset>
+            <input type="submit" name="someAction" value="Lasst die Reise beginnen" class="button"/>
+        </form>
 
-Willkommen Geschichtenschreiber, lasst uns gemeinsam eine Reise in die sarmadische Fantasie antreten. <br><br>
 
-<form action="index.php" method="post">
-<span title="Su correo electrónico">Dein Name:  </span><input type="text" name="name" value="" id="name" required><br><br>
-<span title="Contraseña">Dein Passwort:  </span><input type="text" name="password" value="" id="password"   required><br><br>
-<input type="submit" name="someAction" value="Lasst die Reise beginnen" class="myButton"/>
+    </div>
 </div>
-</div>
-
 
 
 </body>
-
+</div>
+<?php include('footer.php')?>
 
 </html>
