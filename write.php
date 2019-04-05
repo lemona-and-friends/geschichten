@@ -111,7 +111,7 @@
         
         echo "<br> An " . $menu;
         
-        echo "<input type='submit' name='someAction1' value='Weiterreichen' class='myButton'/>";
+        echo "<input type='submit' name='someAction1' value='Weiterreichen' class='basicButton myButton'/>";
     } else if ($row['Pt2'] == null){
         echo "<div id='fertigerPart'>Teil 1 ✅<br><br>";
         echo "..." .$row['letzterTeil']. "</div>";
@@ -130,7 +130,7 @@
         $menu="<select name='filter' id='filter'>" . $options . "</select>";
         echo "<br> An " . $menu;
         
-        echo "<input type='submit' name='someAction2' value='Weiterreichen' class='myButton'/>";
+        echo "<button type='submit' name='someAction2' class='button'>Weiterreichen</button>";
     }
     else if ($row['Pt3'] == null){
         echo "<div id='fertigerPart'>Teil 1 ✅</div>";
@@ -151,7 +151,7 @@
         $menu="<select name='filter' id='filter'>" . $options . "</select>";
         echo "<br> An " . $menu;
         
-        echo "<input type='submit' name='someAction3' value='Weiterreichen' class='myButton'/>";
+        echo "<input type='submit' name='someAction3' value='Weiterreichen' class='basicButton myButton'/>";
     }
     else if ($row['Pt4'] == null){
         echo "<div id='fertigerPart'>Teil 1 ✅</div>";
@@ -173,7 +173,7 @@
         $menu="<select name='filter' id='filter'>" . $options . "</select>";
         echo "<br> An " . $menu;
         
-        echo "<input type='submit' name='someAction4' value='Weiterreichen' class='myButton'/>";
+        echo "<input type='submit' name='someAction4' value='Weiterreichen' class='basicButton myButton'/>";
     }
     else if ($row['Pt5'] == null){
         echo "<div id='fertigerPart'>Teil 1 ✅</div>";
@@ -196,7 +196,7 @@
         $menu="<select name='filter' id='filter'>" . $options . "</select>";
         echo "<br> An " . $menu;
         
-        echo "<input type='submit' name='someAction5' value='Weiterreichen' class='myButton'/>";
+        echo "<input type='submit' name='someAction5' value='Weiterreichen' class='basicButton myButton'/>";
     }
     else if ($row['Pt6'] == null){
         echo "<div id='fertigerPart'>Teil 1 ✅</div>";
@@ -220,7 +220,7 @@
         $menu="<select name='filter' id='filter'>" . $options . "</select>";
         echo "<br> An " . $menu;
         
-        echo "<input type='submit' name='someAction6' value='Weiterreichen' class='myButton'/>";
+        echo "<input type='submit' name='someAction6' value='Weiterreichen' class='basicButton myButton'/>";
     }
     else if ($row['Pt7'] == null){
         echo "<div id='fertigerPart'>Teil 1 ✅</div>";
@@ -245,7 +245,7 @@
         $menu="<select name='filter' id='filter'>" . $options . "</select>";
         echo "<br> An " . $menu;
         
-        echo "<input type='submit' name='someAction7' value='Weiterreichen' class='myButton'/>";
+        echo "<input type='submit' name='someAction7' value='Weiterreichen' class='basicButton myButton'/>";
     }
     else if ($row['Pt8'] == null){
         echo "<div id='fertigerPart'>Teil 1 ✅</div>";
@@ -264,7 +264,7 @@
         $result = mysqli_query($bd, $sql);
         
         
-        echo "<input type='submit' name='someAction8' value='Fertig stellen' class='myButton'/>";
+        echo "<input type='submit' name='someAction8' value='Fertig stellen' class='basicButton myButton'/>";
     }
     
     echo "</div>";

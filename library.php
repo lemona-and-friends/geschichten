@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    
+    include ('head.php');
    
         $bd = mysqli_connect("localhost", "geschichten_User", "geschichten", "geschichten_User");
         if (mysqli_connect_errno()) {
@@ -13,15 +13,15 @@
         $resultado2 = mysqli_query($bd, $sql);
     if($resultado2->num_rows === 0){
         echo "<div>Noch keine fertigen Geschichten vorhanden.</div>";
-        echo "<div><a class='myButton' href=". $_SERVER['PHP_SELF']. ">Aktualisieren</a></div>";
+        echo "<div><a class='basicButton myButton' href=". $_SERVER['PHP_SELF']. ">Aktualisieren</a></div>";
     }
     else{
         
-    echo "<div><table><tr><th>Geschichte</th><th>Aktionen</th></tr>";
+    echo "<div style='width:100%'><table class='listing'><tr><th>Geschichte</th><th>Aktionen</th></tr>";
    
     while($row = $resultado2->fetch_array())
     {
-        echo "<tr><td>". $row['about'] . "</td><td> <a class='myButton' href='/read.php?id=".$row['id']."'> Lesen </a></td></tr>";
+        echo "<tr><td>". $row['about'] . "</td><td> <a href='/read.php?id=".$row['id']."'><button class='button'> Lesen </button></a></td></tr>";
       
     }
     echo "</table></div>";
@@ -31,24 +31,14 @@
     
     
     ?>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="base.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 
-    <title>Geschichten </title>
-</head>
 
-<body>
-    <br>
-    <br>
-    <a class= "myButton" href="afterLogin.php">Zurück zur Übersicht</a>
-    </div>
+<div><a href="afterLogin.php"><button class= "button"> Zurück zur Übersicht</button></a></div>
+
+</div><!--flexContainer-->
+<?php include('footer.php')?>
+</div><!--main flexContainer-->
 </body>
-
 
 </html>

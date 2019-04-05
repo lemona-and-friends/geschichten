@@ -42,26 +42,22 @@ function test()
         <h1> Login </h1>
     </div>
     <div>
-        <p>Willkommen Geschichtenschreiber, lasst uns gemeinsam eine Reise in die sarmadische Fantasie antreten. </p>
+        <h4>Willkommen Geschichtenschreiber, lass uns gemeinsam eine Reise in die sarmadische Fantasie antreten. </h4>
         <form action="index.php" method="post">
             <fieldset>
-                <label for="name" title="Name">Dein Name:  </label>
-                <input type="text" name="name" value="" id="name" required>
+                <input type="text" name="name" value="" id="name" placeholder="Dein Name" required>
             </fieldset>
             <fieldset>
-                <span for="password" title="Passwort">Dein Passwort:  </span>
-                <input type="password" name="password" value="" id="password" required>
+                <input type="password" name="password" value="" id="password" placeholder="Dein Passwort" required>
             </fieldset>
-            <input type="submit" name="someAction" value="Lasst die Reise beginnen" class="button"/>
+            <input type="submit" name="someAction" value="Lass die Reise beginnen" class="button"/>
         </form>
-
-
     </div>
 </div>
 
 
+<?php include('footer.php')?>
 </body>
 </div>
-<?php include('footer.php')?>
 
 </html>

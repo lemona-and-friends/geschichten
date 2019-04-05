@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    
+        include ('head.php');
    
         $bd = mysqli_connect("localhost", "geschichten_User", "geschichten", "geschichten_User");
         if (mysqli_connect_errno()) {
@@ -23,25 +23,10 @@ echo "<div><h2>".$row['about']."</h2></div>";
     
     
     ?>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="base.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-
-    <title>Geschichten </title>
-</head>
-
-<body>
-    <br>
-    <br>
-    <a class="myButton" href="library.php">Zurück zur Bibliothek</a>
+        <div>
+            <a href="library.php"><button class="button">Zurück zur Bibliothek</button></a>
+        </div>
     </div>
-
+<?php include('footer.php')?>
 </body>
-
-
 </html>

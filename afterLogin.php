@@ -10,29 +10,25 @@
 
 
     <div>
-        <h1> Willkommen
+        <h1> Willkommen,
             <?php
             echo $_SESSION['userid'];
-            ?>
+            ?>!
         </h1>
     </div>
     <div>
-
-        <a href="startNew.php" class="myButton2">Neue Geschichte schreiben</a>
+        <a href="startNew.php" class="basicButton myButton2">Neue Geschichte schreiben</a>
     </div>
     <div>
-        <a href="overview.php" class="myButton3">Weiterschreiben</a>
+        <a href="overview.php" class="basicButton myButton3">Weiterschreiben</a>
     </div>
     <div>
-        <a href="library.php" class="myButton4">Geschichten lesen</a>
+        <a href="library.php" class="basicButton myButton4">Geschichten lesen</a>
     </div>
+<?php include('footer.php')?>
 </div>
-
-
-
-
 </body>
 
-<?php include('footer.php')?>
+
 
 </html>

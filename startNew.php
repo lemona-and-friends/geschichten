@@ -79,7 +79,7 @@ Anfangen wird:
 <div>Thema/Person der Geschichte: <br> <input type="text" value="" id="thema" name="thema">
 <br>
 <br>
-<input type="submit" name="someAction" value="Neue Geschichte starten" class="myButton"/>
+<input type="submit" name="someAction" value="Neue Geschichte starten" class="basicButton myButton"/>
 </form>
 </div>
 </div>
