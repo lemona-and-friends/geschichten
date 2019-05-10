@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+        $title="Überblick";
         include('head.php');
    
         $bd = mysqli_connect("localhost", "geschichten_User", "geschichten", "geschichten_User");

@@ -1,4 +1,11 @@
 <?php
+
+    if(is_null($footerOptions)){
+        $footerOptions = [
+            "afterLogin.php" => "zurück",
+        ];
+    }
+
 /**
  * Created by PhpStorm.
  * User: leonakuse
@@ -6,5 +13,9 @@
  * Time: 21:31
  */?>
 <div id="footer">
-    (c) Niklas Bartholomäus Meyer, 2019
+    <?php
+    foreach ($footerOptions as $i => $value) {
+        echo "<div><a href='".$i."'>". $value . "</a></div>";
+    }
+    ?>
 </div>

@@ -54,9 +54,6 @@ function test()
         </form>
     </div>
 </div>
-
-
-<?php include('footer.php')?>
 </body>
 </div>
 

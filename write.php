@@ -69,25 +69,16 @@
         
         $sql = "SELECT * FROM geschichten WHERE id ='" . $_GET['id'] ."'" ;
         $resultado2 = mysqli_query($bd, $sql);
-    $row = $resultado2->fetch_array();
+        $row = $resultado2->fetch_array();
+
+
     ?>
 
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="utf-8" />
-<link rel="stylesheet" type="text/css" href="base.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-
-<title>Geschichten </title>
-</head>
-
-<body>
 
 <?php
-    
-    echo "<div class='flexContainer'>";
+    include ('head.php');
+
+    echo "<div class=''>";
     echo "<div><h1>".$row['about']."</h1></div>";
     
     if($row['Pt1'] == null){
