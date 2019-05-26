@@ -7,9 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['someAction'])) {
 
 }
 
-/**
- *
- */
 function test()
 {
     $bd = mysqli_connect("localhost", "geschichten_User", "geschichten", "geschichten_User");
@@ -35,26 +32,23 @@ function test()
 }
     include('head.php')
 ?>
-
-
-<div class="flexContainer">
-    <div>
-        <h1> Login </h1>
-    </div>
-    <div>
-        <h4>Willkommen Geschichtenschreiber, lass uns gemeinsam eine Reise in die sarmadische Fantasie antreten. </h4>
+    <div class="p-4 align-self-center">
+        <h3> Login </h3>
+        <p>Willkommen Geschichtenschreiber, lasst uns gemeinsam eine Reise in die sarmadische Fantasie antreten. </p>
         <form action="index.php" method="post">
-            <fieldset>
-                <input type="text" name="name" value="" id="name" placeholder="Dein Name" required>
-            </fieldset>
-            <fieldset>
-                <input type="password" name="password" value="" id="password" placeholder="Dein Passwort" required>
-            </fieldset>
-            <input type="submit" name="someAction" value="Lass die Reise beginnen" class="button"/>
+            <div class="form-group">
+                <label for="name" title="Name">Dein Name:  </label>
+                <input type="text" class="form-control" name="name" value="" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="password" title="Passwort">Dein Passwort:  </label>
+                <input type="password" class="form-control" name="password" value="" id="password" required>
+            </div>
+            <input type="submit" name="someAction" class="form-control" value="Lasst die Reise beginnen"/>
         </form>
+
+
     </div>
 </div>
 </body>
-</div>
-
 </html>

@@ -8,7 +8,6 @@
         if (mysqli_connect_errno()) {
             echo "Error: " . mysqli_connect_error() . ". <br>"; exit();
         }
-    echo "<div class='flexContainer' style='min-width: 500px'>";
         $sql = "SELECT * FROM geschichten WHERE nextPerson ='" . $_SESSION['userid'] ."'" ;
         $resultado2 = mysqli_query($bd, $sql);
     if($resultado2->num_rows === 0){
@@ -33,8 +32,6 @@
     <div>
         <a href="afterLogin.php"><button class="button">Weitere Optionen</button></a>
     </div>
-</div>
-<?php include('footer.php')?>
 </div>
 </body>
 </html>

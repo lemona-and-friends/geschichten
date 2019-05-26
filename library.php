@@ -10,7 +10,6 @@
         if (mysqli_connect_errno()) {
             echo "Error: " . mysqli_connect_error() . ". <br>"; exit();
         }
-    echo "<div class='flexContainer' style='flex-grow:2'>";
 
         $sql = "SELECT * FROM geschichten WHERE fertig =1" ;
         $resultado2 = mysqli_query($bd, $sql);
@@ -25,17 +24,15 @@
 
         while($row = $resultado2->fetch_array())
         {
-            echo "<a class='storytile card col-lg-4 col-sm-3 m-2 p-2' href='/read.php?id=" . $row['id'] . "'><div><article><p class='title'>" . $row['about'] . "</p></article></div></a>";
+            echo "<a class='card col-lg-4 col-sm-3 m-2 p-2 text-dark' href='/read.php?id=" . $row['id'] . "'><div><article><p class='title'>" . $row['about'] . "</p></article></div></a>";
         }
         echo "</div>";
     }
         mysqli_close($bd);
-        ?>
-</div>
-<?php
-    include('footer.php');
 
-?>
+
+
+    ?>
 </div>
 </body>
 

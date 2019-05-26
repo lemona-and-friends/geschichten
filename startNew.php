@@ -33,54 +33,49 @@
         mysqli_close($bd);
         
     }
-    
+
+    $title="Neue Geschichte";
+    include('head.php')
     ?>
-<!DOCTYPE html>
-<html lang="es">
+    <form action="startNew.php" method="post">
 
-<head>
-<meta charset="utf-8" />
-<link rel="stylesheet" type="text/css" href="base.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <?php
+        $options = '';
+        $bd = mysqli_connect("localhost", "geschichten_User", "geschichten", "geschichten_User");
+        if (mysqli_connect_errno()) {
+            echo "Error: " . mysqli_connect_error() . ". <br>";
+            exit();
+        }
+
+        $sql = "SELECT name FROM user";
+        $resultado2 = mysqli_query($bd, $sql);
+
+        mysqli_close($bd);
 
 
-<title> Geschichtenseite  </title>
-</head>
+        while ($row = $resultado2->fetch_array()) {
+            $options .= "<span><option>" . $row['name'] . "</option></span>";
+            $checkboxes .= "<label class='checkbox-inline m-2' for='" . $row['name'] . "'><input class='m-2' type='checkbox' id='" . $row['name'] . "' name='checkbox[]' value='" . $row['name'] . "'>" . $row['name'] . "</label>";
+        }
 
-<body>
-<div class="flexContainer">
-<div>
-<form action="startNew.php" method="post">
-Anfangen wird:
-<?php
-    $options='';
-    $bd = mysqli_connect("localhost", "geschichten_User", "geschichten", "geschichten_User");
-    if (mysqli_connect_errno()) {
-        echo "Error: " . mysqli_connect_error() . ". <br>"; exit();
-    }
-    
-    $sql = "SELECT name FROM user";
-    $resultado2 = mysqli_query($bd, $sql);
-  
-    
-    while($row = $resultado2->fetch_array()){
-        $options .="<span><option>" . $row['name'] . "</option></span>";
-        $checkboxes .="<span><input type='checkbox' id='".$row['name'] ."' name='checkbox[]' value='".$row['name'] ."'><label for='".$row['name'] ."'>".$row['name'] ."</label></span><br>";
-    }
-    
-    $menu="<p><label></label></p><select name='filter' id='filter'>" . $options . "</select>";
-    
 
-    
-    echo $menu ."</div><br><br>";
-    echo "<div>An der Geschichtenschreiberei teilnehmen werden: <br>";
-    echo $checkboxes. "</div><br>";
-    ?>
-<div>Thema/Person der Geschichte: <br> <input type="text" value="" id="thema" name="thema">
-<br>
-<br>
-<input type="submit" name="someAction" value="Neue Geschichte starten" class="basicButton myButton"/>
-</form>
+        $menu = "<label></label><select class='form-control' name='filter' id='filter'>" . $options . "</select>";
+
+
+
+
+        echo "<div>An der Geschichtenschreiberei teilnehmen werden: <br>";
+        echo $checkboxes . "</div><br>";
+        echo "Anfangen wird:";
+        echo $menu;
+        ?>
+        <div class="p-4">
+            Thema/Person der Geschichte:
+
+        <input class="form-control" type="text" value="" id="thema" name="thema">
+        <input type="submit" name="someAction" value="Neue Geschichte starten" class="m-4 btn btn-success"/>
+        </div>
+    </form>
 </div>
 </div>
 
