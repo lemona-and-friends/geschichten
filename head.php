@@ -32,5 +32,5 @@
            </h2>
        </div>
 </div>
-<div id="flex" class="p-4 p-md-2">
+<div id="flex" class="p-3 p-md-2">
 
